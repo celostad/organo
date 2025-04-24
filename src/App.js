@@ -48,7 +48,6 @@ function App() {
 
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
   }
 
@@ -57,6 +56,7 @@ function App() {
       <Banner />
       <Formulario nomeDosTimes={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/> 
       {times.map(time => <Time 
+        key={time.nome}
         nome={time.nome} 
         corPrimaria={time.corPrimaria} 
         corSecundaria={time.corSecundaria}
