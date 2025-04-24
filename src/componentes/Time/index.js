@@ -6,7 +6,7 @@ const Time = (props) => {
     const colorSecundaria = { backgroundColor: props.corSecundaria }
 
     return(
-        <section className='time' style={colorSecundaria}>
+        (props.colaboradores.length > 0) ? <section className='time' style={colorSecundaria}>
             <h3 style={{ borderColor: props.corPrimaria}}>{props.nome}</h3>
             <div className='colaboradores'>
             { props.colaboradores.map( colaborador => <Colaborador                             
@@ -17,6 +17,7 @@ const Time = (props) => {
             )}
             </div>
         </section>
+        : ''
     )
 }
 export default Time
